@@ -1,8 +1,3 @@
-/*
-*
-* Game of 'Connect the dots' using jquery & CSS3
-*
-*/
 $( document ).ready( function()
 {
     //coordinates of the 'dots'
@@ -51,7 +46,7 @@ $( document ).ready( function()
     ];
 
     //draw all the dots
-    for( i = 0; i < coords.length; i++ )
+    for( var i = 0; i < coords.length; i++ )
     {
         var css = {
             left: coords[i][0] - 6,
@@ -69,11 +64,9 @@ $( document ).ready( function()
         $( '#canvas' ).append( div );
     }
 
-
     // when a dot is clicked, join it with a line to the previous dot
     $( '.dot_container' ).click( function()
     {
-
         if( $( this ).hasClass( 'active' ) )
         { //check if active class has been added to the dot (note: can't move this into the .click event handler as it won't work there)
 
@@ -153,12 +146,9 @@ $( document ).ready( function()
 
     } );
 
-    /***
-     reveal the image
-     ***/
+    // reveal the image
     var revealImage = function()
     {
-
         //fade out all the dots & lines
         $( '.dot_container,.line' ).animate( {
             opacity: 1
@@ -174,8 +164,5 @@ $( document ).ready( function()
             } );
 
         } );
-
-
     };
-
 } );
